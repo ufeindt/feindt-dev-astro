@@ -1,5 +1,5 @@
 ---
-import Icon from './icons/Icon.astro';
+import Icon from '../components/Icon.astro';
 
 const socialLinks = [
     { 
@@ -42,20 +42,20 @@ const socialLinks = [
             
             <div class="flex justify-center space-x-8">
                 {socialLinks.map(({ name, icon, href }) => (
-                    <a
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer me"
-                        class="text-purple-600 hover:text-purple-500 transition-colors group"
-                        aria-label={name}
-                    >
-                        <div class="flex flex-col items-center space-y-2">
-                            <Icon name={icon} class="w-8 h-8 text-purple-600 group-hover:text-purple-500 transition-colors" />
-                            <span class="text-sm text-gray-400 group-hover:text-purple-500 transition-colors">
-                                {name}
-                            </span>
-                        </div>
-                    </a>
+                    <div class="group relative">
+                        <a
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer me"
+                            class="text-purple-700 hover:text-purple-600 transition-colors"
+                            aria-label={name}
+                        >
+                            <Icon name={icon} class="w-12 h-12" />
+                        </a>
+                        <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-sm text-gray-300">
+                            {name}
+                        </span>
+                    </div>
                 ))}
             </div>
         </div>
