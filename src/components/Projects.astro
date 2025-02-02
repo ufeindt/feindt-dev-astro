@@ -1,0 +1,45 @@
+---
+const projects = [
+    {
+        title: 'Project One',
+        description: 'A modern web application built with React and Node.js.',
+        image: '/project1.jpg',
+        tags: ['React', 'Node.js', 'MongoDB'],
+        link: '#'
+    },
+    {
+        title: 'Project Two',
+        description: 'An e-commerce platform with advanced features.',
+        image: '/project2.jpg',
+        tags: ['Vue.js', 'Express', 'PostgreSQL'],
+        link: '#'
+    }
+];
+---
+
+<section id="projects" class="py-20 bg-gray-800">
+    <div class="container mx-auto px-4">
+        <h2 class="font-display text-4xl font-bold text-center mb-12 text-white">Featured Projects</h2>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+            {projects.map(project => (
+                <div class="bg-gray-900/50 rounded-lg shadow-lg overflow-hidden border border-purple-600/20">
+                    <img src={project.image} alt={project.title} class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="font-display text-2xl font-semibold mb-2 text-white">{project.title}</h3>
+                        <p class="font-sans text-gray-400 mb-4">{project.description}</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            {project.tags.map(tag => (
+                                <span class="font-sans px-3 py-1 bg-purple-600/30 text-purple-300 rounded-full text-sm">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                        <a href={project.link} class="font-display inline-block bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-500 transition-colors">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
