@@ -1,0 +1,155 @@
+:root {
+  --font-sans:
+    "Alegreya Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  --font-display: "Exo 2", sans-serif;
+
+  /* Dark theme colors */
+  --color-bg-primary: hsl(221, 39%, 11%);
+  --color-bg-secondary: hsl(215, 28%, 17%);
+  --color-text-primary: hsl(0, 0%, 100%);
+  --color-text-secondary: hsl(216, 12%, 84%);
+  --color-text-tertiary: hsl(218, 11%, 65%);
+  --color-accent: hsl(272, 72%, 47%);
+  --color-accent-hover: hsl(271, 91%, 65%);
+  --color-accent-bright: hsl(269, 97%, 85%);
+  --color-accent-text: hsl(270, 100%, 98%);
+
+  --container-width: 40rem;
+
+  @media (width >= 48rem) {
+    --container-width: 48rem;
+  }
+  @media (width >= 64rem) {
+    --container-width: 64rem;
+  }
+  @media (width >= 80rem) {
+    --container-width: 80rem;
+  }
+  @media (width >= 96rem) {
+    --container-width: 96rem;
+  }
+}
+
+/* Alegreya Sans */
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya-sans/AlegreyaSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya-sans/AlegreyaSans-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya-sans/AlegreyaSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya-sans/AlegreyaSans-LightItalic.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya-sans/AlegreyaSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya-sans/AlegreyaSans-MediumItalic.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya-sans/AlegreyaSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("/fonts/alegreya-sans/AlegreyaSans-BoldItalic.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Exo 2.0 */
+@font-face {
+  font-family: "Exo 2";
+  src: url("/fonts/exo-2-0/Exo2.0-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Exo 2";
+  src: url("/fonts/exo-2-0/Exo2.0-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Exo 2";
+  src: url("/fonts/exo-2-0/Exo2.0-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Exo 2";
+  src: url("/fonts/exo-2-0/Exo2.0-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Exo 2";
+  src: url("/fonts/exo-2-0/Exo2.0-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Exo 2";
+  src: url("/fonts/exo-2-0/Exo2.0-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Exo 2";
+  src: url("/fonts/exo-2-0/Exo2.0-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Exo 2";
+  src: url("/fonts/exo-2-0/Exo2.0-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  margin: 0;
+}

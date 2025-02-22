@@ -1,0 +1,114 @@
+---
+import Icon from "../components/Icon.astro";
+
+const socialLinks = [
+  {
+    name: "Email",
+    icon: "email",
+    href: "mailto:your.email@example.com",
+  },
+  {
+    name: "GitHub",
+    icon: "github",
+    href: "https://github.com/yourusername",
+  },
+  {
+    name: "LinkedIn",
+    icon: "linkedin",
+    href: "https://linkedin.com/in/yourusername",
+  },
+  {
+    name: "Mastodon",
+    icon: "mastodon",
+    href: "https://mastodon.social/@yourusername",
+  },
+  {
+    name: "Bluesky",
+    icon: "bluesky",
+    href: "https://bsky.app/profile/yourusername",
+  },
+];
+---
+
+<section id="contact">
+  <div>
+    <h2>Get in Touch</h2>
+    <div>
+      <p>
+        I'm always interested in hearing about new opportunities and
+        collaborations. Feel free to reach out through any of these platforms!
+      </p>
+
+      <div>
+        {
+          socialLinks.map(({ name, icon, href }) => (
+            <div>
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer me"
+                aria-label={name}
+              >
+                <Icon name={icon} style="height: 3rem; width: 3rem;" />
+              </a>
+              <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-sm text-gray-300">
+                {name}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section > div > div {
+    margin-inline: auto;
+    max-width: 42rem;
+    text-align: center;
+  }
+
+  section > div > div > p {
+    color: var(--color-text-secondary);
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+
+  section > div > div > div {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  section > div > div > div > div {
+    display: flex;
+    gap: 0;
+    max-width: 4rem;
+    flex-wrap: wrap;
+  }
+
+  a {
+    color: var(--color-accent);
+    margin-inline: auto;
+    transition: 0.3s;
+  }
+
+  a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  section > div > div > div > div > span {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    font-family: var(--font-sans);
+    margin-inline: auto;
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  section > div > div > div > div:hover > span {
+    opacity: 100%;
+  }
+</style>

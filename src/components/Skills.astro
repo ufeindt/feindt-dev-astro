@@ -1,0 +1,84 @@
+---
+const skills = [
+  {
+    category: "Frontend Development",
+    items: ["HTML5 & CSS3", "JavaScript (ES6+)", "React.js", "Tailwind CSS"],
+  },
+  {
+    category: "Backend Development",
+    items: ["Node.js", "Python", "SQL & NoSQL", "RESTful APIs"],
+  },
+  {
+    category: "Tools & Methods",
+    items: ["Git & GitHub", "Docker", "CI/CD", "Agile/Scrum"],
+  },
+];
+---
+
+<section id="skills">
+  <div>
+    <h2>Skills & Expertise</h2>
+    <div>
+      {
+        skills.map((skillSet, index) => (
+          <div>
+            <h3>{skillSet.category}</h3>
+            <ul>
+              {skillSet.items.map((skill) => (
+                <li>{skill}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  section > div > div {
+    display: grid;
+    gap: 2rem;
+    margin-inline: auto;
+  }
+
+  section > div > div > div {
+    background-color: var(--color-bg-secondary);
+    border-radius: 0.5rem;
+    box-shadow:
+      0 10px 15px -3px rgb(0 0 0 / 0.2),
+      0 4px 6px -4px rgb(0 0 0 / 0.2);
+    padding: 1.5rem;
+  }
+
+  h3 {
+    color: var(--color-accent-hover);
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    padding: 0;
+    color: var(--color-text-secondary);
+    font-family: var(--font-sans);
+    list-style-type: none;
+  }
+
+  ul > :not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  @media (width >= 48rem) {
+    section > div > div {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (width >= 64rem) {
+    section > div > div {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>
