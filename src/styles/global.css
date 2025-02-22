@@ -5,15 +5,29 @@
   --font-display: "Exo 2", sans-serif;
 
   /* Dark theme colors */
-  --color-bg-primary: hsl(221, 39%, 11%);
-  --color-bg-secondary: hsl(215, 28%, 17%);
-  --color-text-primary: hsl(0, 0%, 100%);
-  --color-text-secondary: hsl(216, 12%, 84%);
-  --color-text-tertiary: hsl(218, 11%, 65%);
-  --color-accent: hsl(272, 72%, 47%);
-  --color-accent-hover: hsl(271, 91%, 65%);
-  --color-accent-bright: hsl(269, 97%, 85%);
-  --color-accent-text: hsl(270, 100%, 98%);
+  --hsl-bg-primary: 221, 39%, 11%;
+  --hsl-bg-secondary: 215, 28%, 17%;
+  --hsl-text-primary: 0, 0%, 100%;
+  --hsl-text-secondary: 216, 12%, 84%;
+  --hsl-text-tertiary: 218, 11%, 65%;
+  --hsl-accent-dark: 273, 67%, 39%;
+  --hsl-accent: 272, 72%, 47%;
+  --hsl-accent-hover: 271, 91%, 65%;
+  --hsl-accent-bright: 269, 97%, 85%;
+  --hsl-accent-text: 270, 100%, 98%;
+
+  --color-bg-primary: hsl(var(--hsl-bg-primary));
+  --color-bg-secondary: hsl(var(--hsl-bg-secondary));
+  --color-text-primary: hsl(var(--hsl-text-primary));
+  --color-text-secondary: hsl(var(--hsl-text-secondary));
+  --color-text-tertiary: hsl(var(--hsl-text-tertiary));
+  --color-accent-dark: hsl(var(--hsl-accent-dark));
+  --color-accent: hsl(var(--hsl-accent));
+  --color-accent-hover: hsl(var(--hsl-accent-hover));
+  --color-accent-bright: hsl(var(--hsl-accent-bright));
+  --color-accent-text: hsl(var(--hsl-accent-text));
+
+  --transition-time: 0.3s;
 
   --container-width: 40rem;
 

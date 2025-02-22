@@ -9,53 +9,23 @@ const navItems = [
 ];
 ---
 
-<nav
-  class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-purple-800/90 to-purple-800/80 backdrop-blur-md"
->
-  <div class="container mx-auto px-4">
-    <div class="flex items-center justify-between h-16">
-      <a
-        href="#"
-        class="font-display text-xl font-bold text-white hover:text-purple-200 transition-colors"
-      >
-        Your Name
-      </a>
+<nav>
+  <div>
+    <div>
+      <a href="#"> Your Name </a>
 
-      <div class="hidden md:flex space-x-8">
-        {
-          navItems.map((item) => (
-            <a
-              href={item.href}
-              class="font-display text-purple-200 hover:text-white transition-colors"
-            >
-              {item.name}
-            </a>
-          ))
-        }
+      <div id="desktopMenu">
+        {navItems.map((item) => <a href={item.href}>{item.name}</a>)}
       </div>
 
-      <button
-        class="md:hidden text-purple-200 hover:text-white focus:outline-none"
-        aria-label="Toggle menu"
-        id="menuButton"
-      >
-        <Icon name="menu" />
+      <button aria-label="Toggle menu" id="menuButton">
+        <Icon name="menu" style="width: 2rem; height: 2rem;" />
       </button>
     </div>
 
-    <!-- Mobile menu -->
-    <div class="md:hidden hidden" id="mobileMenu">
-      <div class="px-2 pt-2 pb-3 space-y-1">
-        {
-          navItems.map((item) => (
-            <a
-              href={item.href}
-              class="font-display block px-3 py-2 text-purple-200 hover:text-white transition-colors"
-            >
-              {item.name}
-            </a>
-          ))
-        }
+    <div id="mobileMenu">
+      <div>
+        {navItems.map((item) => <a href={item.href}>{item.name}</a>)}
       </div>
     </div>
   </div>
@@ -67,14 +37,131 @@ const navItems = [
 
   if (menuButton && mobileMenu) {
     menuButton.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
+      mobileMenu.style.display =
+        mobileMenu.style.display === "block" ? "none" : "block";
     });
 
     // Close mobile menu when clicking a link
     mobileMenu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
-        mobileMenu.classList.add("hidden");
+        mobileMenu.style.display = "none";
       });
     });
   }
 </script>
+
+<style>
+  nav {
+    backdrop-filter: blur(0.75rem);
+    background: linear-gradient(
+      to bottom,
+      hsla(var(--hsl-accent-dark), 90%),
+      hsla(var(--hsl-accent-dark), 80%)
+    );
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 50;
+  }
+
+  nav > div {
+    max-width: var(--container-width);
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  nav > div > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav > div > div:first-of-type {
+    height: 4rem;
+  }
+  a {
+    font-family: var(--font-display);
+    text-decoration: none;
+    transition: var(--transition-time);
+  }
+
+  nav > div > div > a {
+    color: var(--color-text-primary);
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition-time);
+  }
+
+  nav > div > div > a:hover {
+    color: var(--color-accent-bright);
+  }
+
+  #desktopMenu {
+    display: none;
+    gap: 2rem;
+  }
+
+  #desktopMenu > a {
+    color: var(--color-accent-bright);
+    font-size: 1.25rem;
+  }
+
+  #desktopMenu > a:hover {
+    color: var(--color-text-primary);
+  }
+
+  #menuButton {
+    background: none;
+    border: none;
+    color: var(--color-accent-bright);
+  }
+
+  #menuButton:hover {
+    color: var(--color-text-primary);
+  }
+
+  #menuButton:focus {
+    outline-style: none;
+  }
+
+  #mobileMenu {
+    display: none;
+  }
+
+  #mobileMenu > div {
+    padding-bottom: 0.75rem;
+    padding-inline: 0.5rem;
+    padding-top: 0.5rem;
+  }
+
+  #mobileMenu > div > a {
+    color: var(--color-accent-bright);
+    display: block;
+    font-size: 1.25rem;
+  }
+
+  #mobileMenu > div > a:not(:last-of-type) {
+    margin-bottom: 0.5rem;
+  }
+
+  #mobileMenu > div > a:hover {
+    color: var(--color-text-primary);
+  }
+
+  @media (width >= 48rem) {
+    #desktopMenu {
+      display: flex;
+    }
+
+    #menuButton {
+      display: none;
+    }
+
+    #mobileMenu {
+      display: none;
+    }
+  }
+</style>
