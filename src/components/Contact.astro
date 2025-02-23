@@ -1,33 +1,6 @@
 ---
 import Icon from "../components/Icon.astro";
-
-const socialLinks = [
-  {
-    name: "Email",
-    icon: "email",
-    href: "mailto:your.email@example.com",
-  },
-  {
-    name: "GitHub",
-    icon: "github",
-    href: "https://github.com/yourusername",
-  },
-  {
-    name: "LinkedIn",
-    icon: "linkedin",
-    href: "https://linkedin.com/in/yourusername",
-  },
-  {
-    name: "Mastodon",
-    icon: "mastodon",
-    href: "https://mastodon.social/@yourusername",
-  },
-  {
-    name: "Bluesky",
-    icon: "bluesky",
-    href: "https://bsky.app/profile/yourusername",
-  },
-];
+import { socials } from "../data/data";
 ---
 
 <section id="contact">
@@ -41,10 +14,10 @@ const socialLinks = [
 
       <div>
         {
-          socialLinks.map(({ name, icon, href }) => (
+          socials.map(({ name, icon, link }) => (
             <div>
               <a
-                href={href}
+                href={link}
                 target="_blank"
                 rel="noopener noreferrer me"
                 aria-label={name}
