@@ -1,5 +1,6 @@
 ---
 import Icon from "../components/Icon.astro";
+import { config } from "../data/data";
 
 const navItems = [
   { name: "About", href: "#about" },
@@ -12,7 +13,7 @@ const navItems = [
 <nav>
   <div>
     <div>
-      <a href="#"> Your Name </a>
+      <a href="#"> {config.name} </a>
 
       <div id="desktopMenu">
         {navItems.map((item) => <a href={item.href}>{item.name}</a>)}

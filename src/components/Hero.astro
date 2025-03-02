@@ -1,14 +1,23 @@
+---
+import { config } from "../data/data";
+---
+
 <section id="hero">
   <div>
-    <h1>Hi, I'm Ulrich Feindt</h1>
-    <p>Full Stack Developer & Problem Solver</p>
-    <p>
-      I build modern web applications and bring creative ideas to life through
-      code.
-    </p>
-    <div>
-      <a href="#contact"> Get in Touch </a>
-      <a href="#projects"> View Projects </a>
+    <div id="heroImage">
+      <img src="/images/profile.jpg" alt="Ulrich Feindt" />
+    </div>
+    <div id="heroText">
+      <h1>Hi, I'm {config.name}</h1>
+      <p>{config.title}</p>
+      <p>
+        I build modern web applications and bring creative ideas to life through
+        code.
+      </p>
+      <div>
+        <a href="#contact"> Get in Touch </a>
+        <a href="#projects"> View Projects </a>
+      </div>
     </div>
   </div>
 </section>
@@ -21,22 +30,27 @@
     text-align: center;
   }
 
-  section > div > h1 {
+  img {
+    border-radius: 50%;
+  }
+
+  div#heroText > h1 {
     color: var(--color-text-primary);
     font-family: var(--font-display);
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 2rem;
+    text-wrap: pretty;
   }
 
-  section > div > p:first-of-type {
+  div#heroText > p:first-of-type {
     color: var(--color-text-secondary);
     font-family: var(--font-display);
     font-size: 1.25rem;
     margin-bottom: 2rem;
   }
 
-  section > div > p:last-of-type {
+  div#heroText > p:last-of-type {
     color: var(--color-text-tertiary);
     font-family: var(--font-sans);
     font-size: 1.125rem;
@@ -44,13 +58,13 @@
     margin-inline: auto;
   }
 
-  section > div > div {
+  div#heroText > div {
     display: flex;
     justify-content: center;
     gap: 1rem;
   }
 
-  section > div > div > a {
+  div#heroText > div > a {
     border-radius: 0.5rem;
     text-decoration: none;
     font-family: var(--font-display);
@@ -60,36 +74,44 @@
     transition: 0.3s;
   }
 
-  section > div > div > a:first-of-type {
+  div#heroText > div > a:first-of-type {
     background-color: var(--color-accent);
     color: var(--color-text-primary);
   }
 
-  section > div > div > a:hover:first-of-type {
+  div#heroText > div > a:hover:first-of-type {
     background-color: var(--color-accent-hover);
   }
 
-  section > div > div > a:last-of-type {
+  div#heroText > div > a:last-of-type {
     border: 1px solid var(--color-accent);
     color: var(--color-accent-hover);
   }
 
-  section > div > div > a:hover:last-of-type {
+  div#heroText > div > a:hover:last-of-type {
     background-color: var(--color-accent);
     color: var(--color-text-primary);
   }
 
   @media (width >= 48rem) {
-    section > div > p:first-of-type {
+    div#heroTextv > p:first-of-type {
       font-size: 1.5rem;
     }
 
-    section > div > p:last-of-type {
+    div#heroText > p:last-of-type {
       font-size: 1.25rem;
     }
 
-    section > div > h1 {
+    div#heroText > h1 {
       font-size: 3.75rem;
     }
+  }
+
+  @media (width >= 72rem) {
+    section > div {
+      display: flex;
+      gap: 8rem;
+    } {
+    
   }
 </style>

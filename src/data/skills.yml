@@ -1,18 +1,18 @@
-- category: "Frontend Development"
-  items:
-    - HTML5 & CSS3
-    - JavaScript (ES6+)
-    - React.js
-    - Tailwind CSS
 - category: "Backend Development"
   items:
-    - Node.js
     - Python
-    - SQL & NoSQL
-    - RESTful APIs
-- category: "Tools & Methods"
+    - APIs (REST & GraphQL)
+    - Django, FastAPI
+    - Databases (SQL & NoSQL)
+- category: "Frontend Development"
   items:
-    - Git & GitHub
-    - Docker
-    - CI/CD
-    - Agile/Scrum
+    - JavaScript/TypeScript
+    - HTML & CSS
+    - React, Angular, Svelte
+- category: "Other Skills, Tools, & Methods"
+  items:
+    - Linux
+    - Git (GitHub, GitLab)
+    - CI/CD, Docker
+    - Testing (TDD, BDD)
+    - Statistics, Data analysis

@@ -21,6 +21,11 @@ type Social = {
   icon: string;
 };
 
+export const config = {
+  name: "Ulrich Feindt",
+  title: "Full Stack Developer & Proplem Solver",
+};
+
 export const projects: Project[] = _projects;
 export const skills: Skill[] = _skills;
 export const socials: Social[] = _socials;
