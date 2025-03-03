@@ -7,7 +7,11 @@ type Project = {
   description: string;
   image: string;
   tags: string[];
-  link: string;
+  links: {
+    live: string;
+    src: string;
+  };
+  featured: boolean;
 };
 
 type Skill = {

@@ -1,16 +1,43 @@
-- title: "Project One"
-  description: "A modern web application built with React and Node.js."
-  image: "/project1.jpg"
+- title: Planning Poker
+  description: >
+    Full stack app to estimate task durations using planning poker with real-time
+    updates.
+  image: /images/projects/planning-poker.webp
   tags:
-    - "React"
-    - "Node.js"
-    - "MongoDB"
-  link: "#"
-- title: "Project Two"
-  description: "An e-commerce platform with advanced features."
-  image: "/project2.jpg"
+    - Angular
+    - FastAPI
+    - MongoDB
+    - WebSockets
+    - Docker
+  links:
+    src: https://github.com/ufeindt/planning-poker
+  featured: true
+- title: Periodic Table of Elements
+  description: Rendering of the periodic table of the elements.
+  image: /images/projects/cosmic-flowchart.webp
   tags:
-    - "Vue.js"
-    - "Express"
-    - "PostgreSQL"
-  link: "#"
+    - VueJS
+  links:
+    live: https://periodic.feindt.dev
+    src: https://github.com/ufeindt/periodic-table
+  featured: true
+- title: Cosmic Flowchart (Hobby website)
+  description: Hobby website for the crochet items that I design, make, and sell.
+  image: /images/projects/cosmic-flowchart.webp
+  tags:
+    - SvelteKit
+    - Tailwind
+    - Strapi
+  links:
+    live: https://cosmicflowch.art
+    src: https://github.com/cosmicflowchart/cosmicflowch.art
+  featured: true
+- title: Personal Website
+  description: The website that you're looking at right now.
+  image: /images/projects/feindt-dev.webp
+  tags:
+    - AstroJS
+  links:
+    live: https://feindt.dev
+    src: https://github.com/ufeindt/feindt-dev-astro
+  featured: false
