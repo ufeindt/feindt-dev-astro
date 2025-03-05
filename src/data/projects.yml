@@ -8,13 +8,13 @@
     - FastAPI
     - MongoDB
     - WebSockets
-    - Docker
+
   links:
     src: https://github.com/ufeindt/planning-poker
   featured: true
 - title: Periodic Table of Elements
   description: Rendering of the periodic table of the elements.
-  image: /images/projects/cosmic-flowchart.webp
+  image: /images/projects/periodic-table.webp
   tags:
     - VueJS
   links:
