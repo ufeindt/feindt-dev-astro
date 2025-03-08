@@ -1,15 +1,18 @@
 - category: "Backend Development"
+  slug: backend
   items:
     - Python
     - APIs (REST & GraphQL)
     - Django, FastAPI
     - Databases (SQL & NoSQL)
 - category: "Frontend Development"
+  slug: frontend
   items:
     - JavaScript/TypeScript
     - HTML & CSS
     - React, Angular, Svelte
 - category: "Other Skills, Tools, & Methods"
+  slug: other
   items:
     - Linux
     - Git (GitHub, GitLab)

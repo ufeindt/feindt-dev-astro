@@ -1,6 +1,8 @@
 ---
 import Icon from "../components/Icon.astro";
-import { socials } from "../data/data";
+import { getCollection } from "astro:content";
+
+const socials = await getCollection("socials");
 ---
 
 <section id="contact">
@@ -14,7 +16,7 @@ import { socials } from "../data/data";
 
       <div>
         {
-          socials.map(({ name, icon, link }) => (
+          socials.map(({ data: { name, icon, link } }) => (
             <div>
               <a
                 href={link}

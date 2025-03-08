@@ -1,4 +1,5 @@
 - title: Planning Poker
+  slug: planning-poker
   description: >
     Full stack app to estimate task durations using planning poker with real-time
     updates.
@@ -8,11 +9,11 @@
     - FastAPI
     - MongoDB
     - WebSockets
-
   links:
     src: https://github.com/ufeindt/planning-poker
   featured: true
 - title: Periodic Table of Elements
+  slug: periodic-table
   description: Rendering of the periodic table of the elements.
   image: /images/projects/periodic-table.webp
   tags:
@@ -22,6 +23,7 @@
     src: https://github.com/ufeindt/periodic-table
   featured: true
 - title: Cosmic Flowchart (Hobby website)
+  slug: cosmic-flowchart
   description: Hobby website for the crochet items that I design, make, and sell.
   image: /images/projects/cosmic-flowchart.webp
   tags:
@@ -33,6 +35,7 @@
     src: https://github.com/cosmicflowchart/cosmicflowch.art
   featured: true
 - title: Personal Website
+  slug: feindt-dev
   description: The website that you're looking at right now.
   image: /images/projects/feindt-dev.webp
   tags:

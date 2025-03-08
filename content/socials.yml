@@ -1,15 +1,20 @@
 - name: "Email"
+  slug: email
   icon: "email"
   link: "mailto:your.email@example.com"
 - name: "GitHub"
+  slug: github
   icon: "github"
   link: "https://github.com/yourusername"
 - name: "LinkedIn"
+  slug: linkedin
   icon: "linkedin"
   link: "https://linkedin.com/in/yourusername"
 - name: "Mastodon"
+  slug: mastodon
   icon: "mastodon"
   link: "https://mastodon.social/@yourusername"
 - name: "Bluesky"
+  slug: bluesky
   icon: "bluesky"
   link: "https://bsky.app/profile/yourusername"

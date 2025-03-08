@@ -1,5 +1,7 @@
 ---
-import { skills } from "../data/data";
+import { getCollection } from "astro:content";
+
+const skills = await getCollection("skills");
 ---
 
 <section id="skills">
@@ -7,11 +9,11 @@ import { skills } from "../data/data";
     <h2>Skills & Expertise</h2>
     <div>
       {
-        skills.map((skillSet, index) => (
+        skills.map(({ data }) => (
           <div>
-            <h3>{skillSet.category}</h3>
+            <h3>{data.category}</h3>
             <ul>
-              {skillSet.items.map((skill) => (
+              {data.items.map((skill) => (
                 <li>{skill}</li>
               ))}
             </ul>
