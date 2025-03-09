@@ -1,20 +1,20 @@
 - name: "Email"
   slug: email
   icon: "email"
-  link: "mailto:your.email@example.com"
+  link: "mailto:ulrich@feindt.dev"
 - name: "GitHub"
   slug: github
   icon: "github"
-  link: "https://github.com/yourusername"
+  link: "https://github.com/ufeindt"
 - name: "LinkedIn"
   slug: linkedin
   icon: "linkedin"
-  link: "https://linkedin.com/in/yourusername"
+  link: "https://linkedin.com/in/ulrich-feindt"
 - name: "Mastodon"
   slug: mastodon
   icon: "mastodon"
-  link: "https://mastodon.social/@yourusername"
+  link: "https://hachyderm.io/@ufeindt"
 - name: "Bluesky"
   slug: bluesky
   icon: "bluesky"
-  link: "https://bsky.app/profile/yourusername"
+  link: "https://bsky.app/profile/feindt.dev"
