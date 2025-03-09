@@ -1,5 +1,5 @@
 ---
-import Icon from "../components/Icon.astro";
+import Icon from "../Icon.astro";
 import { getCollection } from "astro:content";
 
 const socials = await getCollection("socials");
@@ -67,7 +67,7 @@ const socials = await getCollection("socials");
   a {
     color: var(--color-accent);
     margin-inline: auto;
-    transition: 0.3s;
+    transition: var(--transition-time);
   }
 
   a:hover {
@@ -80,7 +80,7 @@ const socials = await getCollection("socials");
     font-family: var(--font-sans);
     margin-inline: auto;
     opacity: 0;
-    transition: 0.3s;
+    transition: var(--transition-time);
   }
 
   section > div > div > div > div:hover > span {

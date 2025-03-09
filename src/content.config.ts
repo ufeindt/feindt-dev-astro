@@ -1,5 +1,23 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, reference, z } from "astro:content";
 import { glob, file } from "astro/loaders";
+
+const blog = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.md",
+    base: "content/blog",
+    generateId: ({ entry }) => entry.replace(".md", "").replaceAll("/", "-"),
+  }),
+  schema: z.object({
+    title: z.string(),
+    pubDate: z.date(),
+    modDate: z.date().optional(),
+    description: z.string(),
+    author: z.string().default("Ulrich Feindt"),
+    tags: z.array(z.string()),
+    projects: z.array(reference("projects")).optional(),
+    relatedPosts: z.array(reference("blog")).optional(),
+  }),
+});
 
 const projects = defineCollection({
   loader: file("content/projects.yml"),
@@ -35,6 +53,7 @@ export const socials = defineCollection({
 });
 
 export const collections = {
+  blog,
   projects,
   skills,
   socials,

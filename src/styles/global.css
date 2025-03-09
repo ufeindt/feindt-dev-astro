@@ -6,6 +6,7 @@
 
   --hsl-bg-primary: 221, 39%, 11%;
   --hsl-bg-secondary: 215, 28%, 17%;
+  --hsl-bg-tertiary: 217, 19%, 27%;
   --hsl-text-primary: 0, 0%, 100%;
   --hsl-text-secondary: 216, 12%, 84%;
   --hsl-text-tertiary: 218, 11%, 65%;
@@ -17,6 +18,7 @@
 
   --color-bg-primary: hsl(var(--hsl-bg-primary));
   --color-bg-secondary: hsl(var(--hsl-bg-secondary));
+  --color-bg-tertiary: hsl(var(--hsl-bg-tertiary));
   --color-text-primary: hsl(var(--hsl-text-primary));
   --color-text-secondary: hsl(var(--hsl-text-secondary));
   --color-text-tertiary: hsl(var(--hsl-text-tertiary));
@@ -28,6 +30,7 @@
 
   --transition-time: 0.3s;
 
+  --blog-width: 56rem;
   --container-width: 40rem;
 
   @media (width >= 48rem) {

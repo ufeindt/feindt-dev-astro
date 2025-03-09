@@ -1,5 +1,5 @@
 ---
-import { config } from "../config";
+import { config } from "../../config";
 ---
 
 <section id="hero">
@@ -11,7 +11,8 @@ import { config } from "../config";
       <h1>{config.name}</h1>
       <p>{config.title}</p>
       <p>
-        I build modern web applications and tools that make work and life easier.
+        I build modern web applications and tools that make work and life
+        easier.
       </p>
       <div>
         <a href="#contact"> Get in Touch </a>
@@ -25,7 +26,7 @@ import { config } from "../config";
   section {
     align-items: center;
     display: flex;
-    min-height: 100vh;
+    min-height: calc(100vh - 12rem);
     text-align: center;
   }
 
@@ -70,7 +71,7 @@ import { config } from "../config";
     font-weight: 600;
     padding-block: 0.75rem;
     padding-inline: 2rem;
-    transition: 0.3s;
+    transition: var(--transition-time);
   }
 
   div#heroText > div > a:first-of-type {
@@ -110,7 +111,6 @@ import { config } from "../config";
     section > div {
       display: flex;
       gap: 8rem;
-    } {
-    
+    }
   }
 </style>

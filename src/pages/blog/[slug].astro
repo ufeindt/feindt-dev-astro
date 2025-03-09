@@ -1,0 +1,98 @@
+---
+import { getCollection, render } from "astro:content";
+
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const dateOptions = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+} as Intl.DateTimeFormatOptions;
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout title={post.data.title}>
+  <section>
+    <div>
+      <article>
+        <h1>{post.data.title}</h1>
+        <p class="pubDate">
+          Published on: {
+            post.data.pubDate.toLocaleDateString("en-us", dateOptions)
+          }
+          {
+            post.data.modDate && (
+              <>
+                <br />
+                Last updated on:{" "}
+                {post.data.modDate.toLocaleDateString("en-us", dateOptions)}
+              </>
+            )
+          }
+        </p>
+        <Content />
+      </article>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  article {
+    max-width: var(--blog-width);
+    margin-inline: auto;
+  }
+
+  .pubDate {
+    color: var(--color-text-tertiary);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  article > :global(h1) {
+    color: var(--color-text-secondary);
+    font-family: var(--font-display);
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  article > :global(h2) {
+    color: var(--color-text-secondary);
+    font-family: var(--font-display);
+    font-size: 2.25rem;
+    font-weight: 700;
+  }
+
+  article > :global(h3) {
+    color: var(--color-text-secondary);
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  article :global(p, li) {
+    color: var(--color-text-primary);
+    font-size: 1.125rem;
+  }
+
+  article :global(a) {
+    color: var(--color-accent-hover);
+    text-decoration: none;
+    transition: var(--transition-time);
+  }
+
+  article :global(a:hover) {
+    color: var(--color-accent);
+    transition: var(--transition-time);
+  }
+</style>

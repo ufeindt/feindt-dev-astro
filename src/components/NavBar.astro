@@ -3,17 +3,18 @@ import Icon from "../components/Icon.astro";
 import { config } from "../config";
 
 const navItems = [
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "About", href: "/#about" },
+  { name: "Blog", href: "/blog" },
+  { name: "Skills", href: "/#skills" },
+  { name: "Projects", href: "/#projects" },
+  { name: "Contact", href: "/#contact" },
 ];
 ---
 
 <nav>
   <div>
     <div>
-      <a href="#"> {config.name} </a>
+      <a href="/#"> {config.name} </a>
 
       <div id="desktopMenu">
         {navItems.map((item) => <a href={item.href}>{item.name}</a>)}
