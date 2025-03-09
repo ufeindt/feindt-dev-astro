@@ -1,4 +1,6 @@
 ---
+import { Image, Picture } from "astro:assets";
+
 import { config } from "../../config";
 ---
 
@@ -26,14 +28,18 @@ import { config } from "../../config";
   section {
     align-items: center;
     display: flex;
-    min-height: calc(100vh - 12rem) !important;
     text-align: center;
   }
 
   img {
     border-radius: 50%;
+    height: min(400px, 100vw - 2rem);
+    width: min(400px, 100vw - 2rem);
   }
 
+  div#heroText {
+    max-width: 100vw;
+  }
   div#heroText > h1 {
     color: var(--color-text-primary);
     font-family: var(--font-display);
@@ -62,6 +68,7 @@ import { config } from "../../config";
     display: flex;
     justify-content: center;
     gap: 1rem;
+    max-width: 100vw;
   }
 
   div#heroText > div > a {
@@ -94,7 +101,7 @@ import { config } from "../../config";
   }
 
   @media (width >= 48rem) {
-    div#heroTextv > p:first-of-type {
+    div#heroText > p:first-of-type {
       font-size: 1.5rem;
     }
 

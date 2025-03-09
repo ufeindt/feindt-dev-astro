@@ -30,13 +30,12 @@
 
   --transition-time: 0.3s;
 
-  --blog-width: 56rem;
-  --container-width: 40rem;
-  --footer-height: 9rem;
+  --blog-width: min(100vw, 56rem);
+  --container-width: min(100vw, 40rem);
+  --footer-height: 6rem;
 
   @media (width >= 48rem) {
     --container-width: 48rem;
-    --footer-height: 6rem;
   }
   @media (width >= 64rem) {
     --container-width: 64rem;

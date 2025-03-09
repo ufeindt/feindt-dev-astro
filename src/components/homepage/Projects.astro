@@ -19,8 +19,10 @@ const projects = await getCollection("projects", ({ data }) => data.featured);
                   <span>{tag}</span>
                 ))}
               </div>
-              {data.links.live && <a href={data.links.live}>View Project</a>}
-              <a href={data.links.src}>Source Code</a>
+              <div>
+                {data.links.live && <a href={data.links.live}>View Project</a>}
+                <a href={data.links.src}>Source Code</a>
+              </div>
             </div>
           </div>
         ))
@@ -49,7 +51,6 @@ const projects = await getCollection("projects", ({ data }) => data.featured);
     display: grid;
     gap: 2rem;
     margin-inline: auto;
-    /* max-width: 64rem; */
   }
 
   section > div > div > div {
@@ -58,6 +59,7 @@ const projects = await getCollection("projects", ({ data }) => data.featured);
     box-shadow:
       0 10px 15px -3px rgb(0 0 0 / 0.2),
       0 4px 6px -4px rgb(0 0 0 / 0.2);
+    max-width: 100vw;
     padding: 1.5rem;
   }
 
