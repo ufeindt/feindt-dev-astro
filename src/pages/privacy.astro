@@ -1,0 +1,102 @@
+---
+import Icon from "../components/Icon.astro";
+import Layout from "../layouts/Layout.astro";
+
+const title = "Privacy Notice";
+const lastUpdated = "2025-03-09";
+const githubUrl =
+  "https://github.com/ufeindt/feindt-dev-astro/blob/main/src/pages/privacy.astro";
+const description = "Privacy notice for feindt.dev";
+---
+
+<Layout title={title} description="Privacy notice">
+  <section>
+    <div>
+      <h1>{title}</h1>
+
+      <div>
+        <p>
+          The following anonymized data is collected in order to understand the
+          usage of the website:
+        </p>
+
+        <ul>
+          <li>URL of the visited page,</li>
+          <li>date and time of visit,</li>
+          <li>country of the visitor, derived from the IP address,</li>
+          <li>the <code>Referer</code> header,</li>
+          <li>
+            browser and system information (determined from the <code
+              >User-Agent</code
+            > header or HTTP client hints; the original headers are not stored),
+          </li>
+          <li>screen size.</li>
+        </ul>
+
+        <p>
+          No personal information (such as the IP address) is collected.
+          Instead, a hash of the IP address, User-Agent, and a random number
+          (“salt”) is kept in memory for 8 hours to identify a browsing session.
+          This is never stored to disk.
+        </p>
+
+        <p>
+          No information is stored in the browser using cookies, localStorage,
+          or any other methods.
+        </p>
+
+        <hr />
+        <p>
+          The above notice is marked with
+          <a
+            href="https://creativecommons.org/publicdomain/zero/1.0/"
+            target="_blank"
+            rel="license noopener noreferrer"
+          >
+            CC0 1.0
+            <Icon name="creative-commons" style="height: 1rem; width: 1rem;" />
+            <Icon
+              name="creative-commons-zero"
+              style="height: 1rem; width: 1rem;"
+            />
+          </a>
+        </p>
+        <p>
+          Last updated: {lastUpdated} &ndash;
+          <a href={githubUrl} rel="noopener noreferrer"> File history</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  section > div {
+    max-width: var(--blog-width);
+    margin-inline: auto;
+  }
+
+  h1 {
+    color: var(--color-text-secondary);
+    font-family: var(--font-display);
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  p,
+  li {
+    color: var(--color-text-primary);
+    font-size: 1.125rem;
+  }
+
+  a {
+    color: var(--color-accent-hover);
+    text-decoration: none;
+    transition: var(--transition-time);
+  }
+
+  a:hover {
+    color: var(--color-accent);
+    transition: var(--transition-time);
+  }
+</style>

@@ -1,0 +1,61 @@
+---
+import Icon from "../components/Icon.astro";
+
+export let lastUpdateYear = 2025;
+---
+
+<footer>
+  <div>
+    <p class="text-2xl space-x-2">
+      <a href="/privacy"> Privacy </a>
+    </p>
+    <p class="text-lg">
+      <a href="https://feindt.dev">feindt.dev</a> &copy; 2025{
+        lastUpdateYear > 2025 ? `-${lastUpdateYear - 2000}` : ""
+      } by Ulrich Feindt.
+    </p>
+    <p class="text-lg">
+      Unless noted otherwise, this work is licensed under
+      <a
+        href="https://creativecommons.org/licenses/by-nc-sa/4.0"
+        target="_blank"
+        rel="license noopener noreferrer"
+      >
+        CC BY-NC-SA 4.0
+        <Icon name="creative-commons" style="height: 1rem; width: 1rem;" />
+        <Icon name="creative-commons-by" style="height: 1rem; width: 1rem;" />
+        <Icon name="creative-commons-nc" style="height: 1rem; width: 1rem;" />
+        <Icon name="creative-commons-sa" style="height: 1rem; width: 1rem;" />
+      </a>
+    </p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--color-bg-secondary);
+    height: var(--footer-height);
+    padding-block: 1rem;
+  }
+  footer > div {
+    max-width: var(--blog-width);
+    margin-inline: auto;
+  }
+
+  p {
+    color: var(--color-text-primary);
+    font-size: 1.125rem;
+    margin-block: 0.25rem;
+  }
+
+  a {
+    color: var(--color-accent-hover);
+    text-decoration: none;
+    transition: var(--transition-time);
+  }
+
+  a:hover {
+    color: var(--color-accent);
+    transition: var(--transition-time);
+  }
+</style>

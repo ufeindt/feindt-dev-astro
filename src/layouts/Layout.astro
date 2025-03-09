@@ -1,13 +1,16 @@
 ---
 import { config } from "../config";
+import Footer from "../components/Footer.astro";
 import NavBar from "../components/NavBar.astro";
 import "../styles/global.css";
 
 interface Props {
   title?: string;
+  description?: string;
+  image?: string;
 }
 
-const { title } = Astro.props;
+const { title, description, image } = Astro.props;
 
 const pageTitle = title ? `${title} - ${config.name}` : config.name;
 ---
@@ -18,14 +21,35 @@ const pageTitle = title ? `${title} - ${config.name}` : config.name;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <meta name="generator" content={Astro.generator} />
+    <meta name="og:title" content={pageTitle} />
+    <meta name="og:locale" content="en_US" />
+    {
+      description && (
+        <>
+          <meta name="description" content={description} />
+          <meta name="og:description" content={description} />
+        </>
+      )
+    }
+    {image && <meta name="og:image" content={image} />}
+    {
+      import.meta.env.PROD && (
+        <script
+          data-goatcounter="https://stats.feindt.dev/count"
+          async
+          src="//stats.feindt.dev/count.js"
+        />
+      )
+    }
   </head>
   <body>
     <NavBar />
     <main>
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
 
@@ -37,6 +61,10 @@ const pageTitle = title ? `${title} - ${config.name}` : config.name;
 
   main {
     padding-top: 4rem;
+  }
+
+  main > section:first-child {
+    min-height: calc(100vh - 8.5rem - var(--footer-height));
   }
 
   section > div {
